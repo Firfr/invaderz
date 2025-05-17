@@ -77,10 +77,10 @@ function gameOver(){
 	c.fillStyle = "white";
 	c.fillRect(0,0,w,h);
 	c.fillStyle = "black";
-	c.font = "10px Arial";
-	c.fillText("Generation: "+generation, 5, 10);
-	c.fillText("Invaders: "+lives, 5, 20);
-	let txt = "Game Over!";
+	c.font = "16px Arial";
+	c.fillText("关卡: "+generation, 5, 20);
+	c.fillText("入侵者: "+lives, 5, 40);
+	let txt = "游戏结束!";
 	c.font = "30px Arial";
 	c.fillText(txt, (w-c.measureText(txt).width)/2, h/2);
 }
@@ -89,9 +89,9 @@ function update(){
 	c.fillStyle = "white";
 	c.fillRect(0,0,w,h);
 	c.fillStyle = "black";
-	c.font = "10px Arial";
-	c.fillText("Generation: "+generation, 5, 10);
-	c.fillText("Invaders: "+lives, 5, 20);
+	c.font = "16px Arial";
+	c.fillText("关卡: "+generation, 5, 20);
+	c.fillText("入侵者: "+lives, 5, 40);
 	for(let i = 0; i < invaders.population.length; i++){
 		invaders.population[i].show();
 	}
@@ -205,16 +205,16 @@ function addEvents(){
 		player.isMovingRight = false;
 	});
 	
-	window.addEventListener('load', function(e) {
+	// window.addEventListener('load', function(e) {
 
-		window.applicationCache.addEventListener('updateready', function(e) {
-		  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-				window.applicationCache.swapCache();
-				window.location.reload();
-		  }
-		}, false);
+	// 	window.applicationCache.addEventListener('updateready', function(e) {
+	// 	  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+	// 			window.applicationCache.swapCache();
+	// 			window.location.reload();
+	// 	  }
+	// 	}, false);
 
-	}, false);
+	// }, false);
 
 
 	if('serviceWorker' in navigator) {
