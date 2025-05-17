@@ -36,13 +36,18 @@ div.appendChild(fireBtn)
 div.appendChild(rightBtn);
 
 function init(){
+	// 获取目标容器
+  var container = document.getElementById("firfe-content");
 	lives = 0;
 	generation = 1;
 	dt = 0;
 	lastUpdate = Date.now();
 	canvas.style.border = "solid";
-	document.body.appendChild( canvas );
-	document.body.appendChild( div );
+	// document.body.appendChild( canvas );
+	// document.body.appendChild( div );
+	// 将 canvas 和 div 添加到该容器中
+  container.appendChild(canvas);
+  container.appendChild(div);
 	invaders = new Genetics();
 	invaders.createPopulation();
 	player = new Player( w/4/2, h/4-4 );

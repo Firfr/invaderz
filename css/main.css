@@ -1,4 +1,4 @@
-html, body{
+/* html, body{
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -7,13 +7,13 @@ html, body{
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
+} */
 canvas{
 	display: block;
 	margin: 10px auto;
   image-rendering: auto;
 }
-div{
+#firfe-content div{
 	margin: auto auto;
 	display: flex;
 	align-items: center;
