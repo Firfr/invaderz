@@ -13,6 +13,76 @@ If you want to see a live version of it, it's hosted [here](https://victorribeir
 You can also add it as an app to your phone (menu / add to home screen), if you wish so.  
 如果你愿意的话，你也可以将它作为应用程序添加到你的手机上（菜单 / 添加到主屏幕）。
 
+## 部署说明
+
+首先感谢原作者的开源。[原项目地址](https://github.com/victorqribeiro/invaderz)
+
+具体汉化了那些内容，请参考[翻译说明](./翻译说明.md)。
+
+
+有需要帮忙部署这个项目的朋友,一杯奶茶,即可程远程帮你部署，需要可联系。  
+微信号 `E-0_0-`  
+闲鱼搜索用户 `明月人间`  
+或者邮箱 `firfe163@163.com`  
+如果这个项目有帮到你。欢迎start。
+
+有其他的项目的汉化需求，欢迎提issue。或其他方式联系通知。
+
+### 镜像
+
+从阿里云或华为云镜像仓库拉取镜像，注意填写镜像标签，镜像仓库中没有`latest`标签
+
+容器内部端口 3000
+
+```bash
+swr.cn-north-4.myhuaweicloud.com/firfe/invaderz:2025.05.17
+```
+
+### docker run 命令部署
+
+```bash
+docker run -d \
+--name invaderz \
+--network bridge \
+--restart always \
+--log-opt max-size=1m \
+--log-opt max-file=3 \
+-p 3000:3000 \
+swr.cn-north-4.myhuaweicloud.com/firfe/invaderz:2025.05.17
+```
+### compose 文件部署 👍推荐
+
+```yaml
+#version: '3.9'
+services:
+  invaderz:
+    container_name: invaderz
+    image: swr.cn-north-4.myhuaweicloud.com/firfe/invaderz:2025.05.17
+    network_mode: bridge
+    restart: always
+    logging:
+      options:
+        max-size: 1m
+        max-file: '3'
+    ports:
+      - 3000:3000
+```
+
+## 修改说明
+
+这里对除了汉化之外的代码修改的说明。  
+增加修改部分具体见 [修改说明](./修改说明.md)。
+
+`./README.md` 文件翻译，增加 `## 部署说明`、`## 修改说明`、`## 效果截图` 部分。
+
+增加目录 `./图片`
+新增文件 `./.dockerignore`、`./Dockerfile`、`./翻译说明.md`、`./修改说明.md`
+
+## 效果截图
+
+<img src="图片/效果图.png" width="400" />
+
+
 ## How to Play 如何操作
 
 Left arrow or A keys - move the cannon to the left  
